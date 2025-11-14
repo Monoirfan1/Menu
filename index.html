@@ -360,10 +360,12 @@
             background: var(--light-charcoal);
             border: 1px solid var(--border-gold);
             border-radius: 8px;
-            min-height: 100px;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: 728px;
         }
 
         .ad-container.hidden {
@@ -536,14 +538,18 @@
         </div>
     </nav>
 
-    <!-- Ad Container - Top (Adsterra) -->
-    <div class="ad-container adsterra-ad" id="ad-top" data-ad-type="adsterra">
-        <iframe src="https://www.effectivegatecpm.com/tzfq6gjst4?key=d0b062387853361776875693ac132e07" 
-                width="728" 
-                height="90" 
-                frameborder="0" 
-                scrolling="no"
-                style="max-width: 100%; height: auto; min-height: 90px;"></iframe>
+    <!-- Ad Container - Top (Adsterra Smart Link) -->
+    <div class="ad-container adsterra-ad" id="ad-top" data-ad-type="adsterra" data-zone="smart-link-3013965" data-placement="27952593">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd0b062387853361776875693ac132e07',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.effectivegatecpm.com/tzfq6gjst4?key=d0b062387853361776875693ac132e07"></script>
     </div>
 
     <!-- Ad Container - Top (Google AdSense) -->
@@ -615,14 +621,18 @@
             </div>
         </section>
 
-        <!-- Ad Container - Between Sections (Adsterra) -->
-        <div class="ad-container adsterra-ad" id="ad-middle" data-ad-type="adsterra">
-            <iframe src="https://www.effectivegatecpm.com/tzfq6gjst4?key=d0b062387853361776875693ac132e07" 
-                    width="728" 
-                    height="90" 
-                    frameborder="0" 
-                    scrolling="no"
-                    style="max-width: 100%; height: auto; min-height: 90px;"></iframe>
+        <!-- Ad Container - Between Sections (Adsterra Smart Link) -->
+        <div class="ad-container adsterra-ad" id="ad-middle" data-ad-type="adsterra" data-zone="smart-link-3013965" data-placement="27952593">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'd0b062387853361776875693ac132e07',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="https://www.effectivegatecpm.com/tzfq6gjst4?key=d0b062387853361776875693ac132e07"></script>
         </div>
 
         <!-- Main Dishes Section -->
@@ -974,6 +984,33 @@
         </section>
     </main>
 
+    <!-- Ad Container - Bottom (Adsterra Smart Link) -->
+    <div class="ad-container adsterra-ad" id="ad-bottom" data-ad-type="adsterra" data-zone="smart-link-3013965" data-placement="27952593">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'd0b062387853361776875693ac132e07',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="https://www.effectivegatecpm.com/tzfq6gjst4?key=d0b062387853361776875693ac132e07"></script>
+    </div>
+
+    <!-- Ad Container - Bottom (Google AdSense) -->
+    <div class="ad-container google-ad" id="ad-google-bottom" data-ad-type="google">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7455247327123412"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <!-- Footer with Referral Link -->
     <footer class="footer">
         <div class="footer-content">
@@ -1002,6 +1039,18 @@
             <label>
                 <input type="checkbox" id="toggleAdMiddle" checked>
                 Show Middle Adsterra Ad
+            </label>
+        </div>
+        <div class="admin-control">
+            <label>
+                <input type="checkbox" id="toggleAdBottom" checked>
+                Show Bottom Adsterra Ad
+            </label>
+        </div>
+        <div class="admin-control">
+            <label>
+                <input type="checkbox" id="toggleAdGoogleBottom" checked>
+                Show Bottom Google AdSense
             </label>
         </div>
         <div class="admin-control">
@@ -1077,6 +1126,16 @@
                 toggleAd('ad-middle', settings.toggleAdMiddle);
             }
             
+            if (settings.toggleAdBottom !== undefined) {
+                document.getElementById('toggleAdBottom').checked = settings.toggleAdBottom;
+                toggleAd('ad-bottom', settings.toggleAdBottom);
+            }
+            
+            if (settings.toggleAdGoogleBottom !== undefined) {
+                document.getElementById('toggleAdGoogleBottom').checked = settings.toggleAdGoogleBottom;
+                toggleAd('ad-google-bottom', settings.toggleAdGoogleBottom);
+            }
+            
             if (settings.toggleReferralLink !== undefined) {
                 document.getElementById('toggleReferralLink').checked = settings.toggleReferralLink;
                 toggleReferralLink(settings.toggleReferralLink);
@@ -1139,6 +1198,8 @@
                 toggleAdTop: document.getElementById('toggleAdTop').checked,
                 toggleAdGoogleTop: document.getElementById('toggleAdGoogleTop').checked,
                 toggleAdMiddle: document.getElementById('toggleAdMiddle').checked,
+                toggleAdBottom: document.getElementById('toggleAdBottom').checked,
+                toggleAdGoogleBottom: document.getElementById('toggleAdGoogleBottom').checked,
                 toggleReferralLink: document.getElementById('toggleReferralLink').checked,
                 adDisplayMode: document.getElementById('adDisplayMode').value
             };
@@ -1149,6 +1210,8 @@
             toggleAd('ad-top', settings.toggleAdTop);
             toggleAd('ad-google-top', settings.toggleAdGoogleTop);
             toggleAd('ad-middle', settings.toggleAdMiddle);
+            toggleAd('ad-bottom', settings.toggleAdBottom);
+            toggleAd('ad-google-bottom', settings.toggleAdGoogleBottom);
             toggleReferralLink(settings.toggleReferralLink);
             applyDisplayMode(settings.adDisplayMode);
             
@@ -1165,6 +1228,74 @@
                 e.preventDefault();
                 adminPanel.classList.toggle('open');
             }
+        });
+
+        // Ad Verification and Status Check
+        function verifyAds() {
+            const adStatus = {
+                googleAdSense: false,
+                adsterra: false
+            };
+
+            // Check Google AdSense
+            if (typeof adsbygoogle !== 'undefined' && adsbygoogle.loaded) {
+                adStatus.googleAdSense = true;
+                console.log('✓ Google AdSense loaded successfully');
+            } else {
+                console.log('⚠ Google AdSense script loading...');
+                // Check again after a delay
+                setTimeout(() => {
+                    if (typeof adsbygoogle !== 'undefined') {
+                        adStatus.googleAdSense = true;
+                        console.log('✓ Google AdSense loaded successfully (delayed)');
+                    }
+                }, 2000);
+            }
+
+            // Check Adsterra
+            const adsterraAds = document.querySelectorAll('[data-ad-type="adsterra"]');
+            if (adsterraAds.length > 0) {
+                adStatus.adsterra = true;
+                console.log(`✓ Adsterra ads found: ${adsterraAds.length} placements`);
+                console.log('  - Zone: smart-link-3013965');
+                console.log('  - Placement ID: 27952593');
+            }
+
+            // Verify all ad containers exist
+            const requiredAds = ['ad-top', 'ad-google-top', 'ad-middle', 'ad-bottom', 'ad-google-bottom'];
+            requiredAds.forEach(adId => {
+                const ad = document.getElementById(adId);
+                if (ad) {
+                    console.log(`✓ Ad container "${adId}" found`);
+                } else {
+                    console.error(`✗ Ad container "${adId}" missing`);
+                }
+            });
+
+            return adStatus;
+        }
+
+        // Run verification after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('=== Ad Verification Report ===');
+                verifyAds();
+                console.log('=== End Verification ===');
+            }, 1000);
+        });
+
+        // Ensure Google AdSense ads are pushed after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const googleAdContainers = document.querySelectorAll('.adsbygoogle');
+                googleAdContainers.forEach(() => {
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (e) {
+                        console.error('Error pushing AdSense ad:', e);
+                    }
+                });
+            }, 500);
         });
     </script>
 </body>
