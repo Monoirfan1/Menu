@@ -1015,6 +1015,7 @@
     <footer class="footer">
         <div class="footer-content">
             <a href="https://beta.publishers.adsterra.com/referral/GZLKn7N8fB" rel="nofollow" class="referral-link" target="_blank">Adsterra Referral Link</a>
+            <a href="https://refer.dub.co/michel-fernando" rel="nofollow" class="referral-link" target="_blank">Dub Referral Link</a>
             <p class="footer-text">© 2024 Birds Paradise Cabanas. All rights reserved.</p>
         </div>
     </footer>
@@ -1161,10 +1162,10 @@
 
         // Toggle referral link visibility
         function toggleReferralLink(show) {
-            const referralLink = document.querySelector('.referral-link');
-            if (referralLink) {
-                referralLink.style.display = show ? 'inline-block' : 'none';
-            }
+            const referralLinks = document.querySelectorAll('.referral-link');
+            referralLinks.forEach(link => {
+                link.style.display = show ? 'inline-block' : 'none';
+            });
         }
 
         // Apply display mode
